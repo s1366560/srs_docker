@@ -24,7 +24,7 @@ RUN cd /srs-2.0-r2/trunk && ./configure --full && make -j16
 
 COPY srs.conf /srs.conf
 COPY entrypoint.sh /entrypoint.sh
-
+RUN chmod +x /entrypoint.sh
 RUN ls -ln /srs-2.0-r2/trunk/objs
 
 EXPOSE 1935 8080 8936
