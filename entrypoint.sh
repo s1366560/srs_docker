@@ -1,11 +1,10 @@
 #!/bin/sh
 
-cd /srs-2.0-r2/trunk
-if [ "$#" -eq 0 ]
-then
-    ./objs/srs -c /srs.conf
+cd /srs/trunk
+if [ -d "/conf/srs.conf" ]; then
+    ./objs/srs -c /conf/srs.conf
 else
-    ./objs/srs "$@"
+    ./objs/srs -c /srs.conf
 fi
 
 tail -f objs/srs.log
